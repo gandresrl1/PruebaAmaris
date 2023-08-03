@@ -34,6 +34,6 @@ namespace Services.Employee
             return employe;
         }
 
-        private int CalculateAnualSalary(int salary) => salary * 12;
+        public int CalculateAnualSalary(int salary) => salary * 12;
     }
 }

@@ -37,12 +37,12 @@ namespace PruebaAmaris.Controllers
             int id;
             bool success = int.TryParse(sid, out id);
             if (!success)
-                return RedirectToAction("Index", new { message = $"Id no valido - {id}" });
+                return RedirectToAction("Index", new { message = $"Id no valido - {sid}" });
 
             var employee = await _srvEmployee.GetEmployeeByIdAsync(id);
             if (employee is null)
             {
-                return RedirectToAction("Index", new { message = $"Empleado {id} no encontrado" });
+                return RedirectToAction("Index", new { message = $"Empleado {sid} no encontrado" });
             }
             return View(employee);
         }
